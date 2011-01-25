@@ -1,0 +1,34 @@
+== map_layers example project
+
+For the original plugin visit https://github.com/pka/map_layers.
+
+MapLayers makes it easy to integrate a dynamic map in a Rails application. It can display map tiles and markers loaded from many different data sources.
+
+--
+
+Some things you have to take care of in Rails 3:
+
+
+* Make the plugin values unescaped by adding "raw"
+
+<%= raw(map_layers_includes :yahoo => "euzuro-openlayers") %>
+<%= raw(@map.to_html) %>
+
+
+* JsExpr needs a function "to_str"
+
+def to_str
+  @variable
+end
+
+
+* Some APIs don't work any more i.e. Google's.
+
+--
+
+OpenLayers framework has been updated.
+
+
+== License
+
+The MapLayers plugin for Rails is released under the MIT license. 
